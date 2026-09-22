@@ -1,0 +1,13 @@
+{
+  "name": "resume-kit",
+  "version": "1.0.0",
+  "description": "Tailor your resume to a job posting using only facts already in your master resume. Fact-checked against the master, reviewed by you, then rendered to an ATS-safe PDF.",
+  "author": {
+    "name": "firas-taiem",
+    "url": "https://github.com/firas-taiem"
+  },
+  "homepage": "https://github.com/firas-taiem/claude-plugins/tree/main/plugins/resume-kit",
+  "repository": "https://github.com/firas-taiem/claude-plugins",
+  "license": "MIT",
+  "keywords": ["resume", "job-search", "ats", "pdf", "tailoring"]
+}

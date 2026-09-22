@@ -1,0 +1,17 @@
+{
+  "name": "firas-taiem",
+  "owner": {
+    "name": "firas-taiem",
+    "url": "https://github.com/firas-taiem"
+  },
+  "plugins": [
+    {
+      "name": "resume-kit",
+      "source": "./plugins/resume-kit",
+      "description": "Tailor your resume to a job posting using only facts already in your master resume. Fact-checked against the master, reviewed by you, then rendered to an ATS-safe PDF.",
+      "version": "1.0.0",
+      "category": "productivity",
+      "keywords": ["resume", "job-search", "ats", "pdf", "tailoring"]
+    }
+  ]
+}
