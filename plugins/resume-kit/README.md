@@ -2,7 +2,7 @@
 
 Give Claude a job posting link. It tailors your resume to that job from your own content and nothing else, shows you every change, and makes an ATS-safe PDF once you approve.
 
-**What you need:** a Claude Pro or Max plan, the Claude desktop app (or Claude Code in a terminal), Google Chrome or Microsoft Edge, Python 3, and about 20 minutes for the first setup. No API key and no coding.
+**What you need:** a Claude Pro or Max plan, the Claude desktop app, Google Chrome or Microsoft Edge, Python 3, and about 20 minutes for the first setup. No API key, no coding, no terminal.
 
 ## How it works
 
@@ -37,14 +37,32 @@ The fact check and the PDF maker use it.
 - **Windows:** install Python 3 from [python.org/downloads](https://www.python.org/downloads/) and tick **Add Python to PATH** on the first screen.
 
 ### 4. Install the plugin
-In the Claude desktop app, click the **Code** tab and start a session in any folder. Then type these two lines, one at a time:
+This is done in the desktop app's settings, with no typing in the chat box.
+
+1. Open the Claude desktop app. In the sidebar, click **Customize**, then **Plugins**. (Or open **Settings** and pick **Plugins** under Customize.)
+2. Click the **+ Add** button at the top right, then **Add marketplace**.
+3. Choose **Add from a repository**.
+4. In the **URL** field, type exactly this and click **Sync**:
+
+   ```
+   firas-taiem/claude-plugins
+   ```
+
+   Type it as shown. A link copied from a GitHub page (one that contains `/tree/main/...`) is a web page, not a repository, and Sync will fail.
+5. Click the **Discover** tab. **Resume kit** by firas-taiem appears in the list. Click **Add**.
+
+![Resume kit in the Discover tab](docs/discover-resume-kit.png)
+
+The plugin is now part of your Claude account. It follows you to any computer where you sign in, and it works in any folder you open.
+
+<details>
+<summary>Using Claude Code in a terminal instead?</summary>
 
 ```
 /plugin marketplace add firas-taiem/claude-plugins
 /plugin install resume-kit@firas-taiem
 ```
-
-You can also click the **+** button next to the prompt box, choose **Plugins**, and find it there. Either way, the plugin is now part of your Claude account and works in any folder you open.
+</details>
 
 ### 5. Make your Resume Kit folder
 Create a folder called `Resume Kit` in your Documents folder. Put your master resume in it as a markdown file named `Resume - Your Name.md`.
@@ -123,7 +141,8 @@ Before you see anything, `check_claims.py` compares the tailored resume against 
 
 | What you see | What to do |
 |---|---|
-| `/resume-kit:tailor-resume` is not recognized | Run `/plugin install resume-kit@firas-taiem` again, then start a new session. |
+| `/resume-kit:tailor-resume` is not recognized | Check Settings → Plugins → **Yours** shows Resume kit. If it does, close the session and start a new one. If it does not, repeat setup step 4. |
+| "Failed to add marketplace" | Two causes. Either the URL is a GitHub page link (contains `/tree/main/`): retype it as `firas-taiem/claude-plugins`. Or the marketplace is already added: click **Discover** and search for "Resume kit" before trying again. |
 | "No master resume found" | The folder you opened has no `Resume - <Name>.md` at its top level. Open your `Resume Kit` folder itself, not Documents or a subfolder. |
 | It cannot read the job page | Paste the job description text into the chat. That always works. |
 | The fact check stopped the run | Read the line it flagged. If the fact is true and missing from your master, add it to the master and run again. If it is not true, tell Claude to remove it. |
@@ -132,7 +151,7 @@ Before you see anything, `check_claims.py` compares the tailored resume against 
 | Asked for an API key | Never needed. Sign in with your claude.ai account. |
 
 ## Updating
-When a new version is published, Claude Code tells you at the start of a session. Type `/plugin marketplace update firas-taiem` and then `/reload-plugins`. Your resume and job folders are yours and are never touched by an update.
+Plugins added through your Claude account update on their own. Your resume and job folders are yours and are never touched by an update.
 
 ## Privacy
 Everything runs on your computer. Your resume is read from your own folder, the job posting is fetched from the URL you give, and the PDF is made by your own Chrome. Nothing in this plugin sends your resume anywhere.

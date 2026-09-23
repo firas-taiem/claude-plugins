@@ -4,19 +4,16 @@ Skills and plugins for [Claude Code](https://code.claude.com), packaged so they 
 
 ## Install
 
-In Claude Code (the desktop app's Code tab, or the terminal), add this marketplace once:
+**Claude desktop app (no terminal):** open **Customize → Plugins** (or Settings → Plugins), click **+ Add → Add marketplace → Add from a repository**, type `firas-taiem/claude-plugins` in the URL field and click **Sync**. Then open the **Discover** tab and click **Add** on the plugin you want. Type the marketplace name as shown, not a link copied from a GitHub page.
+
+**Claude Code in a terminal:** add this marketplace once, then install any plugin from the list below:
 
 ```
 /plugin marketplace add firas-taiem/claude-plugins
-```
-
-Then install any plugin from the list below:
-
-```
 /plugin install <plugin-name>@firas-taiem
 ```
 
-Or click **+** next to the prompt box, choose **Plugins**, and pick from the list. Plugins install into your Claude account and work in every folder you open. Skills from a plugin are called as `/<plugin-name>:<skill-name>`.
+Plugins install into your Claude account and work in every folder you open. Skills from a plugin are called as `/<plugin-name>:<skill-name>`.
 
 ## Plugins
 
