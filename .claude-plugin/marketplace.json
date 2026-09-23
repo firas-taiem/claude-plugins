@@ -11,7 +11,24 @@
       "description": "Tailor your resume to a job posting using only facts already in your master resume. Fact-checked against the master, reviewed by you, then rendered to an ATS-safe PDF.",
       "version": "1.0.0",
       "category": "productivity",
-      "keywords": ["resume", "job-search", "ats", "pdf", "tailoring"]
+      "keywords": [
+        "resume",
+        "job-search",
+        "ats",
+        "pdf",
+        "tailoring"
+      ],
+      "author": {
+        "name": "firas-taiem",
+        "url": "https://github.com/firas-taiem"
+      },
+      "homepage": "https://github.com/firas-taiem/claude-plugins/tree/main/plugins/resume-kit",
+      "repository": "https://github.com/firas-taiem/claude-plugins",
+      "license": "MIT"
     }
-  ]
+  ],
+  "metadata": {
+    "description": "Claude Code plugins by firas-taiem. Install: /plugin marketplace add firas-taiem/claude-plugins",
+    "version": "1.0.0"
+  }
 }
